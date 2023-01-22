@@ -1,0 +1,18 @@
+<h1>Генератор звітів</h1>
+<%= form_with url: reports_report_by_dates_path, method: :get do |f| %>
+  <p>
+    <%= label_tag(:start_date, 'Дата YYYY-MM-DD') %>
+    <%= f.date_select :start_date %>
+  </p>
+  <p>
+    <%= label_tag(:end_date, 'Дата YYYY-MM-DD') %>
+    <%= f.date_select :end_date %>
+  </p>
+  <p>
+    <%= label_tag(:category, 'Категорія') %>
+    <%= f.select 'category', options_from_collection_for_select(Category.all, 'id', 'name') %>
+  </p>
+
+  <%= f.submit 'По датам' %>
+  <%= f.submit 'Графік' %>
+<% end %>
