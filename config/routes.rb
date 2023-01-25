@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :reports, only: :index
+  get 'reports/report'
   get 'reports/report_by_category'
   get 'reports/report_by_dates'
   get 'main/index'

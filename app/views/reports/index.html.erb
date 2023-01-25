@@ -1,5 +1,5 @@
 <h1>Генератор звітів</h1>
-<%= form_with url: reports_report_by_dates_path, method: :get do |f| %>
+<%= form_with url: reports_report_path, method: :get do |f| %>
   <p>
     <%= label_tag(:start_date, 'Дата YYYY-MM-DD') %>
     <%= f.date_select :start_date %>
