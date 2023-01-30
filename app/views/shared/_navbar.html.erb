@@ -11,21 +11,29 @@
           <%= link_to "Categories", categories_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Activities</a>
+           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Activities
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Text_1</a></li>
+            <li><a class="dropdown-item" href="#">Text_2</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Допомога
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Допомога</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Текст_1</a></li>
+            <li><a class="dropdown-item" href="#">Текст_2</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link disabled">Admin</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
