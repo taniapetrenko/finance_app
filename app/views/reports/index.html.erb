@@ -13,6 +13,6 @@
     <%= f.select 'category', options_from_collection_for_select(Category.all, 'id', 'name') %>
   </p>
 
-  <%= f.submit 'По датам' %>
-  <%= f.submit 'Графік' %>
+  <%= f.submit 'По датам', class: 'btn btn-danger' %>
+  <%= f.submit 'Графік', class: 'btn btn-success' %>
 <% end %>
