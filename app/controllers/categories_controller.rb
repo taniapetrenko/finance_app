@@ -3,7 +3,11 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = if params[:search].present?
+                    Category.where("name LIKE ?", "%#{params[:search].downcase}%")
+                  else
+                    Category.all
+                  end
   end
 
   # GET /categories/1 or /categories/1.json
