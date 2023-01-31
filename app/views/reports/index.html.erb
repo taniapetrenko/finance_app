@@ -9,6 +9,10 @@
     <%= f.date_select :end_date %>
   </p>
   <p>
+    <%= label_tag(:operation, 'Тип операції') %>
+    <%= f.select 'operation', options_from_collection_for_select(Category.all, 'id', 'name') %>
+  </p>
+  <p>
     <%= label_tag(:category, 'Категорія') %>
     <%= f.select 'category', options_from_collection_for_select(Category.all, 'id', 'name') %>
   </p>
