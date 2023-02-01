@@ -1,14 +1,50 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Operations</h1>
+<h1>Транзакції</h1>
 
-<div id="operations">
-  <% @operations.each do |operation| %>
-    <%= render operation %>
-    <p>
-      <%= link_to "Show this operation", operation %>
-    </p>
-  <% end %>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+  </div>
+    <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Фільтр по категоріям</option>
+      <%= options_from_collection_for_select(Category.all, 'id', 'name') %>
+    </select>
 </div>
 
-<%= link_to "New operation", new_operation_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"> Категорія</th>
+      <th scope="col">Тип Операції</th>
+      <th scope="col">Сума</th>
+      <th scope="col">Дата</th>
+      <th scope="col">Опис</th>
+      <th scope="col">Управління</th>
+    </tr>
+  </thead>
+  <tbody id="categories">
+  <% @operations.each do |operation| %>
+       <tr>
+        <td><%= operation.category.id %></td>
+        <td><%= operation.category.name %></td>
+        <td>Витрата</td>
+        <td><%= operation.amount %></td>
+        <td><%= operation.odate %></td>
+        <td><%= operation.description %></td>
+        <td>
+          <div class="d-flex flex-row">
+            <div class="p-2">
+              <%= link_to '', edit_operation_path(operation), class: 'btn btn-light bi-pencil-square' %>
+            </div>
+            <div class="p-2">
+              <%= button_to '', operation, method: :delete, class: 'btn btn-light bi-x-lg' %>
+            </div>
+          </div>
+        </td>
+        </tr>
+    <% end %>
+  </tbody>
+  </table>
+
+  <%= button_to "New transaction", new_operation_path, method: :get, class: "btn btn-success" %>
