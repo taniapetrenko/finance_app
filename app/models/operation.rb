@@ -1,4 +1,7 @@
 class Operation < ApplicationRecord
+  enum operation_type: {
+    витрата: 0, дохід: 1
+  }
   belongs_to :category
 
   validates :amount, presence: true,
