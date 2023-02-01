@@ -24,8 +24,8 @@
     </tr>
   </thead>
   <tbody id="categories">
-  <% @operations.each do |operation| %>
-       <tr>
+    <% @operations.each do |operation| %>
+      <tr>
         <td><%= operation.category.id %></td>
         <td><%= operation.category.name %></td>
         <td>Витрата</td>
@@ -42,9 +42,9 @@
             </div>
           </div>
         </td>
-        </tr>
+      </tr>
     <% end %>
   </tbody>
-  </table>
+</table>
 
   <%= button_to "New transaction", new_operation_path, method: :get, class: "btn btn-success" %>
