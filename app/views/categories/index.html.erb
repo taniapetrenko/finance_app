@@ -7,10 +7,10 @@
       <div class="form-outline">
         <%= text_field_tag :search, params[:search], placeholder: 'Введіть перші літери назви категорії', class: 'form-control rounded' %>
       </div>
-      <button type="submit" class="btn btn-outline-primary">
+      <button type="submit" class="btn btn-outline-dark">
         <i class="bi-search"></i>
       </button>
-      <%= link_to raw("<i class='bi-x-lg'></i>"), categories_path, method: :get, class: "btn btn-outline-primary" %>
+      <%= link_to raw("<i class='bi-x-lg'></i>"), categories_path, method: :get, class: "btn btn-success" %>
     </div>
   <% end %>
 
@@ -35,7 +35,7 @@
               <%= link_to '', edit_category_path(category), class: 'btn btn-light bi-pencil-square' %>
             </div>
             <div class="p-2">
-              <%= button_to '', @category, method: :delete, class: 'btn btn-light bi-x-lg' %>
+              <%= button_to '', category, method: :delete, class: 'btn btn-light bi-x-lg' %>
             </div>
           </div>
         </td>
@@ -44,4 +44,4 @@
   </tbody>
 </table>
 
-<%= button_to "New category", new_category_path, method: :get, class: "btn btn-primary" %>
+<%= button_to "New category", new_category_path, method: :get, class: "btn btn-success" %>
