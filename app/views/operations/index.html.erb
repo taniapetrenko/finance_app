@@ -2,14 +2,14 @@
 
 <h1>Транзакції</h1>
 
+<%= form_tag(operations_path, method: :get, id: "select-form") do %>
   <div class="input-group mb-3">
-    <div class="input-group-prepend">
+    <%= select_tag :category_id, options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), class: 'custom-select', prompt: 'Фільтр по категоріям' %>
+    <button type="submit" class="btn btn-outline-dark">
+      <i class="bi-search"></i>
+    </button>
   </div>
-    <select class="custom-select" id="inputGroupSelect01">
-        <option selected>Фільтр по категоріям</option>
-      <%= options_from_collection_for_select(Category.all, 'id', 'name') %>
-    </select>
-</div>
+<% end %>
 
 <table class="table">
   <thead>
