@@ -8,7 +8,6 @@ class Operation < ApplicationRecord
                      numericality: { only_integer: true, greater_than: 0 }
   validates :odate, :description, presence: true
 
-  scope :by_report, ->(start_date, end_date, category_id, operation_type) do
-    where(odate: start_date..end_date, category_id: category_id, operation_type: operation_type)
-  end
+  scope :by_date, ->(start_date, end_date) { where(odate: start_date..end_date) }
+  scope :by_operation_type, ->(operation_type) { where(operation_type: operation_type) }
 end
