@@ -3,31 +3,34 @@ class ReportsController < ApplicationController
   end
 
   def report
+    operations = Operation.by_report(
+      params[:start_date],
+      params[:end_date],
+      params[:category_id],
+      params[:operation_type]
+    )
     if params['commit'] == 'По датам'
       redirect_to(
         {
           action: 'report_by_dates',
-          start_date: Date.new(params['start_date(1i)'].to_i, params['start_date(2i)'].to_i, params['start_date(3i)'].to_i),
-          end_date: Date.new(params['end_date(1i)'].to_i, params['end_date(2i)'].to_i, params['end_date(3i)'].to_i)
+          operations: operations
         }
       )
     else
       redirect_to(
         {
           action: 'report_by_category',
-          category: params[:category]
+          operations: operations
         }
       )
     end
   end
 
   def report_by_category
-    @operations = Operation.by_category(params['category'])
+    @operations = params[:operations]
   end
 
   def report_by_dates
-    @operations = Operation.by_date(
-      params[:start_date], params[:end_date]
-    )
+    @operations = params[:operations]
   end
 end
