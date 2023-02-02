@@ -16,7 +16,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col"> Категорія</th>
-      <th scope="col">Тип Операції</th>
+      <th scope="col">Тип операції</th>
       <th scope="col">Сума</th>
       <th scope="col">Дата</th>
       <th scope="col">Опис</th>
@@ -26,9 +26,9 @@
   <tbody id="categories">
     <% @operations.each do |operation| %>
       <tr>
-        <td><%= operation.category.id %></td>
+        <td><%= operation.id %></td>
         <td><%= operation.category.name %></td>
-        <td>Витрата</td>
+        <td><%= operation.operation_type.capitalize %></td>
         <td><%= operation.amount %></td>
         <td><%= operation.odate %></td>
         <td><%= operation.description %></td>

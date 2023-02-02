@@ -3,7 +3,11 @@ class OperationsController < ApplicationController
 
   # GET /operations or /operations.json
   def index
-    @operations = Operation.all
+    @operations = if params[:category_id].present?
+                    Operation.where(category_id: params[:category_id])
+                  else
+                    Operation.all
+                  end
   end
 
   # GET /operations/1 or /operations/1.json
@@ -65,6 +69,8 @@ class OperationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def operation_params
-      params.require(:operation).permit(:amount, :odate, :description, :category_id)
+      params.require(:operation).permit(
+        :amount, :odate, :description, :category_id, :operation_type
+      )
     end
 end

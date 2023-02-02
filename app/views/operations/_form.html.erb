@@ -27,11 +27,17 @@
   </div>
 
   <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.text_field :category_id %>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.select :category_id, options_from_collection_for_select(Category.all, 'id', 'name'), prompt: "Виберіть тип категорії" %>
+  </div>
+
+    <div>
+    <%= form.label :operation_type, style: "display: block" %>
+    <%= form.select :operation_type, options_for_select(Operation.operation_types.map{ |key, _| [key.humanize.capitalize, key]}), prompt: "Виберіть тип операції" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-success" %>
   </div>
+
 <% end %>

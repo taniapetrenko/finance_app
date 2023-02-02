@@ -2,22 +2,22 @@
 <%= form_with url: reports_report_path, method: :get do |f| %>
   <p>
     <%= label_tag(:start_date, 'Дата YYYY-MM-DD') %>
-    <%= f.date_select :start_date %>
+    <%= f.datetime_field :start_date %>
   </p>
   <p>
     <%= label_tag(:end_date, 'Дата YYYY-MM-DD') %>
-    <%= f.date_select :end_date %>
+    <%= f.datetime_field :end_date %>
   </p>
   <p>
     <%= label_tag(:operation, 'Тип операції') %>
-    <%= f.select 'operation', options_from_collection_for_select(Category.all, 'id', 'name') %>
+    <%= f.select :operation_type, options_for_select(Operation.operation_types.map{ |key, _| [key.humanize.capitalize, key]}), prompt: "Виберіть тип операції" %>
   </p>
   <p>
     <%= label_tag(:category, 'Категорія') %>
-    <%= f.select 'category', options_from_collection_for_select(Category.all, 'id', 'name') %>
+    <%= f.select 'category', options_from_collection_for_select(Category.all, 'id', 'name'), prompt: "Виберіть тип категорії" %>
   </p>
 
-  <%= f.submit 'Згенерувати', class: 'btn btn-primary' %>
+  <%= f.submit 'Згенерувати', class: 'btn btn-success' %>
   <%= f.submit 'Очистити', class: 'btn btn-outline-warning' %>
   <%= f.submit 'Графік', class: 'btn btn-outline-success btn-rounded' %>
   <%= f.submit 'По датам', class: 'btn btn-outline-danger btn-rounded' %>
