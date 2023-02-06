@@ -1,2 +1,30 @@
-<h1>Reports#report_by_category</h1>
-<p>Find me in app/views/reports/report_by_category.html.erb</p>
+<h1>Звіт за період: <%= @start_date.to_date %>  -  <%= @end_date.to_date %></h1>
+<br>
+<h2><%= @operation_type %></h2>
+<div class="row gx-5">
+  <div class="col">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Категорія</th>
+          <th scope="col">Сума</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @operations.each do |name, operation_amount| %>
+          <tr>
+            <td><%= name %></td>
+            <th scope="row"><%= operation_amount %></td>
+          </tr>
+        <% end %>
+        <tr style="background-color: #90EE90;">
+          <td>Всього</td>
+          <th scope="row"><%= @operations.values.sum %> грн</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <%= pie_chart @operations %>
+  </div>
+</div>

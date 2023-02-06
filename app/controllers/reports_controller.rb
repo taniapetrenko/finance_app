@@ -9,7 +9,8 @@ class ReportsController < ApplicationController
           action: 'report_by_dates',
           start_date: params[:start_date],
           end_date: params[:end_date],
-          operation_type: params[:operation_type]
+          operation_type: params[:operation_type],
+          category_id: params[:category_id]
         }
       )
     else
@@ -18,23 +19,13 @@ class ReportsController < ApplicationController
           action: 'report_by_category',
           start_date: params[:start_date],
           end_date: params[:end_date],
-          operation_type: params[:operation_type],
-          category_id: params[:category_id]
+          operation_type: params[:operation_type]
         }
       )
     end
   end
 
   def report_by_category
-    @operations = Operation.by_report(
-      params[:start_date],
-      params[:end_date],
-      params[:category_id],
-      params[:operation_type]
-    )
-  end
-
-  def report_by_dates
     @operations = Operation.by_date(
                               params[:start_date],
                               params[:end_date])
@@ -45,5 +36,16 @@ class ReportsController < ApplicationController
     @start_date = params[:start_date]
     @end_date = params[:end_date]
     @operation_type = params[:operation_type].capitalize
+  end
+
+  def report_by_dates
+    @operations = Operation.by_date(
+                              params[:start_date],
+                              params[:end_date])
+                           .by_operation_type(params[:operation_type])
+                           .by_category(params[:category_id])
+                           .group(:odate)
+                           .sum(:amount)
+
   end
 end

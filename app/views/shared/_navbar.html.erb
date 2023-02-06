@@ -8,34 +8,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categories
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Text_1</a></li>
-            <li><a class="dropdown-item" href="#">Text_2</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Activities
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Text_1</a></li>
-            <li><a class="dropdown-item" href="#">Text_2</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><%= link_to 'Список категорій', categories_path, class: 'dropdown-item' %></li>
+            <li><%= link_to 'Створити категорію', new_category_path, class: 'dropdown-item' %></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Допомога
+            Activities
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Текст_1</a></li>
-            <li><a class="dropdown-item" href="#">Текст_2</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><%= link_to 'Список транзакцій', operations_path, class: 'dropdown-item' %></li>
+            <li><%= link_to 'Створити транзакцію', new_operation_path, class: 'dropdown-item' %></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

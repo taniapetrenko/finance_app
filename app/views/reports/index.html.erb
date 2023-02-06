@@ -17,9 +17,7 @@
     <%= f.select :category_id, options_from_collection_for_select(Category.all, 'id', 'name'), prompt: "Виберіть тип категорії" %>
   </p>
 
-  <%= f.submit 'Згенерувати', class: 'btn btn-success' %>
-  <%= f.submit 'Очистити', class: 'btn btn-outline-warning' %>
+  <%= link_to 'Очистити', reports_path, class: 'btn btn-warning' %>
   <%= f.submit 'Графік', class: 'btn btn-outline-success btn-rounded' %>
   <%= f.submit 'По датам', class: 'btn btn-outline-danger btn-rounded' %>
-
 <% end %>
