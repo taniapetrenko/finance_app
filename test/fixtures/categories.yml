@@ -1,9 +1,41 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyString
+product:
+  name: Product
+  description: Food, water
 
-two:
-  name: MyString
-  description: MyString
+relaxation:
+  name: Relaxation
+  description: Going to the cinema/theatre, concerts
+
+clothes:
+  name: Clothes
+  description: Clothes shopping
+
+sport:
+  name: Sport
+  description: Purchase of a subscription to the gym, sports clothes
+
+salary:
+  name: Salary
+  description: Monthly salary
+
+travel:
+  name: Travel
+  description: Plane/train ticket, book hotel
+
+coffee:
+  name: Coffee
+  description: coffee to go
+
+construction_costs:
+  name: Construction costs
+  description: Construction Materials
+
+appliances:
+  name: Appliances
+  description: appliances
+
+self_development:
+  name: Self development
+  description: Courses, trainings

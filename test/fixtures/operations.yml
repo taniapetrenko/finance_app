@@ -1,13 +1,141 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  amount: 9.99
-  odate: 2023-01-10 20:26:12
+  amount: 500
+  odate: 2023-01-01 20:26:12
   description: MyString
-  category: one
+  category: product
+  operation_type: :витрата
 
 two:
-  amount: 9.99
+  amount: 345
+  odate: 2023-01-02 20:26:12
+  description: MyString
+  category: product
+  operation_type: :витрата
+
+three:
+  amount: 400
+  odate: 2023-01-03 20:26:12
+  description: MyString
+  category: relaxation
+  operation_type: :витрата
+
+four:
+  amount: 540
+  odate: 2023-01-04 20:26:12
+  description: MyString
+  category: relaxation
+  operation_type: :витрата
+
+five:
+  amount: 690
+  odate: 2023-01-05 20:26:12
+  description: MyString
+  category: clothes
+  operation_type: :витрата
+
+six:
+  amount: 999
+  odate: 2023-01-06 20:26:12
+  description: MyString
+  category: clothes
+  operation_type: :витрата
+
+seven:
+  amount: 1099
+  odate: 2023-01-07 20:26:12
+  description: MyString
+  category: sport
+  operation_type: :витрата
+
+eight:
+  amount: 14000
+  odate: 2023-01-08 20:26:12
+  description: MyString
+  category: sport
+  operation_type: :витрата
+
+nine:
+  amount: 7000
   odate: 2023-01-10 20:26:12
   description: MyString
-  category: two
+  category: salary
+  operation_type: :дохід
+
+ten:
+  amount: 15000
+  odate: 2023-01-11 20:26:12
+  description: MyString
+  category: salary
+  operation_type: :дохід
+
+eleven:
+  amount: 300
+  odate: 2023-02-01 20:26:12
+  description: MyString
+  category: travel
+  operation_type: :витрата
+
+twelve:
+  amount: 4000
+  odate: 2023-02-02 20:26:12
+  description: MyString
+  category: travel
+  operation_type: :витрата
+
+thirteen:
+  amount: 45
+  odate: 2023-02-03 20:26:12
+  description: MyString
+  category: coffee
+  operation_type: :витрата
+
+fourteen:
+  amount: 75
+  odate: 2023-02-04 20:26:12
+  description: MyString
+  category: coffee
+  operation_type: :витрата
+
+fifteen:
+  amount: 6000
+  odate: 2023-02-04 20:26:12
+  description: MyString
+  category: construction_costs
+  operation_type: :витрата
+
+sixteen:
+  amount: 2500
+  odate: 2023-02-05 20:26:12
+  description: MyString
+  category: construction_costs
+  operation_type: :витрата
+
+seventeen:
+  amount: 4000
+  odate: 2023-01-17 20:26:12
+  description: MyString
+  category: appliances
+  operation_type: :витрата
+
+eighteen:
+  amount: 1099
+  odate: 2023-01-23 20:26:12
+  description: MyString
+  category: appliances
+  operation_type: :витрата
+
+nineteen:
+  amount: 7000
+  odate: 2023-01-10 20:26:12
+  description: MyString
+  category: self_development
+  operation_type: :витрата
+
+twenty:
+  amount: 250
+  odate: 2023-01-10 20:26:12
+  description: MyString
+  category: self_development
+  operation_type: :витрата

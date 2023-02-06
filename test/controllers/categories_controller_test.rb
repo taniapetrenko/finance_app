@@ -2,7 +2,7 @@ require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @category = categories(:one)
+    @category = categories(:product)
   end
 
   test "should get index" do
@@ -17,7 +17,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create category" do
     assert_difference("Category.count") do
-      post categories_url, params: { category: { description: @category.description, name: @category.name } }
+      post categories_url, params: { category: { description: @category.description, name: 'Test category' } }
     end
 
     assert_redirected_to category_url(Category.last)

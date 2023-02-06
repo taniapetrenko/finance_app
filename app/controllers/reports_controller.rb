@@ -35,7 +35,7 @@ class ReportsController < ApplicationController
                            .sum(:amount)
     @start_date = params[:start_date]
     @end_date = params[:end_date]
-    @operation_type = params[:operation_type].capitalize
+    @operation_type = params[:operation_type]&.capitalize
   end
 
   def report_by_dates
