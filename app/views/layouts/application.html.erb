@@ -23,9 +23,13 @@
   <body>
     <%= render partial: 'shared/navbar'%>
 
-    <div class='container'>
+    <% if @without_container %>
       <%= yield %>
-    </div>
+    <% else %>
+      <div class='container'>
+        <%= yield %>
+      </div>
+    <% end %>
 
 
     <%= render partial: 'shared/footer'%>
