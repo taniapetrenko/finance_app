@@ -1,4 +1,4 @@
-<h1>Генератор звітів</h1>
+<h1 style="line-height: 1.8">Генератор звітів</h1>
 <%= form_with url: reports_report_path, method: :get do |f| %>
   <p>
     <%= label_tag(:start_date, 'Дата YYYY-MM-DD') %>
@@ -18,6 +18,6 @@
   </p>
 
   <%= link_to 'Очистити', reports_path, class: 'btn btn-warning' %>
-  <%= f.submit 'Графік', class: 'btn btn-outline-success btn-rounded' %>
+  <%= f.submit 'Графік', class: 'btn btn-success' %>
   <%= f.submit 'По датам', class: 'btn btn-outline-danger btn-rounded' %>
 <% end %>

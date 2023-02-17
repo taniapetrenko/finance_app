@@ -3,7 +3,7 @@
 <h1>Категорії витрат / доходів</h1>
 
   <%= form_tag(categories_path, method: :get, id: "search-form") do %>
-    <div class="input-group">
+    <div class="input-group pb-3">
       <div class="form-outline">
         <%= text_field_tag :search, params[:search], placeholder: 'Введіть перші літери назви категорії', class: 'form-control rounded' %>
       </div>
@@ -14,13 +14,13 @@
     </div>
   <% end %>
 
-<table class="table">
+<table class="table" style="line-height: 1.8">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Назва</th>
-      <th scope="col">Опис</th>
-      <th scope="col">Управління</th>
+      <th scope="col" style="background-color: #f2f2f2">#</th>
+      <th scope="col" style="background-color: #f2f2f2">Назва</th>
+      <th scope="col" style="background-color: #f2f2f2">Опис</th>
+      <th scope="col" style="background-color: #f2f2f2">Управління</th>
     </tr>
   </thead>
   <tbody id="categories">

@@ -3,7 +3,7 @@
 <h1>Транзакції</h1>
 
 <%= form_tag(operations_path, method: :get, id: "select-form") do %>
-  <div class="input-group mb-3">
+  <div class="input-group pb-3">
     <%= select_tag :category_id, options_from_collection_for_select(Category.all, 'id', 'name', params[:category_id]), class: 'custom-select', prompt: 'Фільтр по категоріям' %>
     <button type="submit" class="btn btn-outline-dark">
       <i class="bi-search"></i>
@@ -14,13 +14,13 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col"> Категорія</th>
-      <th scope="col">Тип операції</th>
-      <th scope="col">Сума</th>
-      <th scope="col">Дата</th>
-      <th scope="col">Опис</th>
-      <th scope="col">Управління</th>
+      <th scope="col" style="background-color: #f2f2f2">#</th>
+      <th scope="col" style="background-color: #f2f2f2"> Категорія</th>
+      <th scope="col" style="background-color: #f2f2f2">Тип операції</th>
+      <th scope="col" style="background-color: #f2f2f2">Сума</th>
+      <th scope="col" style="background-color: #f2f2f2">Дата</th>
+      <th scope="col" style="background-color: #f2f2f2">Опис</th>
+      <th scope="col" style="background-color: #f2f2f2">Управління</th>
     </tr>
   </thead>
   <tbody id="categories">
